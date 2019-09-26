@@ -10,8 +10,8 @@ import { IncomingMessage, ServerResponse, Server } from 'http';
 import { RequestHandler } from 'micro';
 export type ServerResponse = ServerResponse;
 export type ServerRequest = IncomingMessage & {
-    params: { [key: string]: string },
-    query: { [key: string]: string }
+    params: { [key: string]: string | void },
+    query: { [key: string]: string | void }
 };
 export type AugmentedRequestHandler = (
     req: ServerRequest,
